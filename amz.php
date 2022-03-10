@@ -21,7 +21,7 @@ $banned = "$cyan
 
 function email_chk($email)
 {
-    $ch = curl_init("http://innerselft.my.id/?email=$email");
+    $ch = curl_init("https://apiceker.ddns.net/?email=$email");
     curl_setopt($ch, CURLOPT_COOKIEJAR, "cookie.txt");
     curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -51,12 +51,12 @@ for ($i = 0; $i < count($inilist); $i++) {
         file_put_contents('die.txt', $inilist[$i] . PHP_EOL, FILE_APPEND);
     } elseif ($res->status == 'Update Now') {
         echo $yellow . "Checker Need To Fixed! \n" . $normal;
-        exit;
+        // exit;
     } elseif ($res->expired == -1) {
         echo $yellow . "Checker Expired!\n" . $normal;
-        exit;
+        // exit;
     } else {
         echo $yellow . "Maybe IP BLOKED\n" . $normal;
-        exit;
+        // exit;
     }
 }
